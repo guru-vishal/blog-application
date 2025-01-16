@@ -1,0 +1,40 @@
+<%- include("./partials/header.ejs") %>
+
+<body>
+
+    <% if(locals.posts && locals.posts.length!=0) { %>          <!-- Ensure 'posts' is declared and it is not empty -->
+        <div class="card container card-container" style="border: white; margin-top: 0;">
+            <% locals.posts.forEach(post => { %>                <!-- Iterate through the 'posts' -->
+                <div class="card card-body" style="margin: 30px;">
+                    <h5 class="card-title croissant-one-regular"> Update Post </h5>
+                    <form action="/edit" method="post">
+
+                        <label for="title" class="croissant-one-regular"> Title </label><br><br>        <!-- Label for Title -->
+                        <input type="text" class="form-control croissant-one-regular" id="title" name="title" value="<%= post.title %>" required><br>       <!-- Input for Title -->
+
+                        <label for="content" class="croissant-one-regular"> Content </label><br>        <!-- Label for Content -->
+                        <textarea class="form-control new-post croissant-one-regular" aria-label="textarea" name="content" id="textarea"><%= post.content %></textarea>     <!-- Input for Title -->
+
+                        <p class="card-text mb-2 text-body-secondary date croissant-one-regular"> Posted: <%= post.datePosted %> </p>       <!-- Date and time of the post posted -->
+                        <p class="card-text mb-2 text-body-secondary date croissant-one-regular"> Updated: <%= post.dateUpdated %> </p>     <!-- Date and time of the post last updated -->
+
+                        <input type="hidden" name="id" value="<%= post.id %>">                                      <!-- Id of the post -->
+                        <button type="submit" class="btn btn-warning croissant-one-regular"> Update </button>       <!-- Butto to update a post -->
+
+                    </form>
+                 </div>
+            <% }); %>
+        </div>
+    <% } else { %>          <!-- If 'posts' is empty, 'No posts yet' is shown -->
+        <div class="card container card-container">
+            <p class="card-text croissant-one-regular"> No posts yet. </p>
+        </div>
+    <% } %>
+
+    <script>
+        $("#home").removeClass("active");
+    </script>
+
+</body>
+
+<%- include("partials/footer.ejs") %>
