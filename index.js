@@ -1,7 +1,7 @@
 import express from "express";                                  // Import express package
 
 const app = express();                                          // Instance for express
-const port = 3000;                                              // Set port as 3000
+const PORT = process.env.PORT || 3000;                          // Set port as 3000
 
 let posts = [];                                                 // Handle posts
 
@@ -66,7 +66,7 @@ app.post("/remove", (req, res) => {                             // Delete a post
     res.redirect("/");
 });
 
-app.listen(port, (req, res) => {                                // Listen the server on the port
-    console.log(`Server running on port ${port}`);
+app.listen(PORT, (req, res) => {                                // Listen the server on the port
+    console.log(`Server running on port ${PORT}`);
 });
 
