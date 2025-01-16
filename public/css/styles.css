@@ -47,13 +47,18 @@ a {
     font-size: 10px;
 }
 
-footer {
+.footer{
     background-color: black;
     color: white;
+    margin-bottom: 0;
+}
+
+footer {
+    background-color: black;
     text-align: center;
     position: fixed;
     width: 100%;
-    margin-bottom: 0;
+    bottom: 0;
     height: 40px;
 }
 
