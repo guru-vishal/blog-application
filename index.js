@@ -1,4 +1,5 @@
 import express from "express";                                  // Import express package
+import moment from "moment-timezone";
 
 const app = express();                                          // Instance for express
 const port= 3000;                                               // Set port as 3000
@@ -37,12 +38,12 @@ app.get("/contact", (req, res) => {                             // 'Contact' pag
 });
 
 app.post("/create", (req, res) => {                             // Add new post
-    const currentDate = new Date();
+    const currentDate = moment().tz("Asia/Kolkata").format("DD-MM-YYYY HH:mm:ss");
     const newPost = {
         id: posts.length+1,
         title: req.body.title,
         content: req.body.content,
-        datePosted: currentDate.toLocaleString(),
+        datePosted: currentDate.toLocaleString("en-US", {timeZone: "Asia/Kolakata"}),
         dateUpdated: null
     };
     posts.push(newPost);
@@ -50,7 +51,7 @@ app.post("/create", (req, res) => {                             // Add new post
 });
 
 app.post("/edit", (req, res) => {                               // Edit a post
-    const currentDate = new Date();
+    const currentDate = moment().tz("Asia/Kolkata").format("DD-MM-YYYY HH:mm:ss");
     const postId = parseInt(req.body.id, 10);
     const post = posts.find(p => p.id === postId);
     post.title = req.body.title;
