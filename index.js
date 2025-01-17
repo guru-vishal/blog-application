@@ -55,7 +55,7 @@ app.post("/edit", (req, res) => {                               // Edit a post
     const post = posts.find(p => p.id === postId);
     post.title = req.body.title;
     post.content = req.body.content;
-    post.dateUpdated = currentDate.toLocaleString();
+    post.dateUpdated = currentDate.toLocaleString("en-US", {timeZone: "Asia/Kolakata"});
     res.redirect("/");
 });
 
