@@ -1,0 +1,39 @@
+<%- include("./partials/header.ejs") %>
+
+<body>
+    
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="lobster-regular"> Contact Me </h1>
+        <div class="col-lg-6 mx-auto content">
+            <p class="mb-4 croissant-one-regular" style="color: rgb(14, 14, 212);">
+                Hello, I am GuruVishal, the developer of this project.
+                I am currently pursuing my second year of Bachelor's 
+                degree in Engineering at Sri Eshwar College of 
+                Engineering with Computer Science as <br>
+                You can connect me through:
+            </p>
+        </div>
+
+        <div class="contact">
+            <p class="domine"><a href="https://www.linkedin.com/in/guru-vishal-1a1a58321/" target="_blank"> Linkedin </a></p>
+            <p class="domine"><a href="https://x.com/kxrxviii" target="_blank"> X (Twitter) </a></p>
+            <p class="domine"><a href="https://www.instagram.com/_vishalmuthu_/" target="_blank"> Instagram </a></p>
+            <p class="domine"><a href="https://www.facebook.com/profile.php?id=61564244080127" target="_blank"> FaceBook </a></p>
+        </div>
+        <div class="contact">
+            <p class="domine"><a href="https://wa.me/9597293169" target="_blank"> WhatsApp </a></p>
+            <p class="domine"><a href="https://github.com/guru-vishal" target="_blank"> GitHub </a></p>
+            <p class="domine"><a href="https://in.pinterest.com/vishal3012006/" target="_blank"> Pinterest </a></p>
+        </div>
+
+    </div>
+
+    <script>
+        $("#home").removeClass("active");
+        $("#about").removeClass("active");
+        $("#contact").addClass("active");
+    </script>
+
+</body>
+
+<%- include("./partials/footer.ejs") %>

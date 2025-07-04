@@ -1,0 +1,42 @@
+<%- include("./partials/header.ejs") %>
+
+<body>
+
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="lobster-regular"> About this project </h1>
+        <div class="col-lg-6 mx-auto content">
+            <p class="mb-4 croissant-one-regular" style="color: rgb(14, 14, 212);">
+                This is a simple web application where users can 
+                create, view, update or delete posts. This is also 
+                responsive for most devices like desktops, laptops,
+                tablets, mobile phones. I haven't added any 
+                database or authentication for this, so the 
+                data entered will be stored only for the current 
+                session.<br>
+                The tools and technologies that I have used 
+                for this project are:
+                <ul style="text-align: left; color: rgb(6, 6, 125); margin: 50px; margin-top: 0;">
+                    <li> HTML </li>
+                    <li> CSS </li>
+                    <li> JS </li>
+                    <li> Bootstrap </li>
+                    <li> jQuery </li>
+                    <li> Node.js </li>
+                    <li> Express.js </li>
+                    <li> Git </li>
+                    <li> GitHub </li>
+                    <li> Railway </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        $("#home").removeClass("active");
+        $("#contact").removeClass("active");
+        $("#about").addClass("active");
+    </script>
+
+</body>
+
+<%- include("./partials/footer.ejs") %>
