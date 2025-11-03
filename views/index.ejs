@@ -1,0 +1,30 @@
+<%- include("./partials/header.ejs") %>
+
+<body>
+    
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="lobster-regular"> Blog Application </h1>
+        <div class="col-lg-6 mx-auto content">
+            <p class="mb-4 croissant-one-regular" style="color: rgb(14, 14, 212);">   
+                Write. Share. Connect. Your platform to express ideas and stories. 
+                Simple, modern, and designed for everyone.
+                Connect, inspire, and grow. 
+                Start your blogging journey today.
+                Blog effortlessly with a clean and intuitive design. 
+                Write your first post today and make your mark.
+                Be part of a community of creators. Share your ideas, 
+                learn from others, and connect through stories.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <button class="btn btn-success croissant-one-regular" onclick="window.location.href='/post';" id="post"> Create a New Post </button>   <!-- Redirects to 'Create a new post' page -->
+        <button class="btn btn-info croissant-one-regular" onclick="window.location.href='/view';" id="view"> View Posts </button>             <!-- Redirects to 'View posts' page -->                  
+        <button class="btn btn-warning croissant-one-regular" onclick="window.location.href='/update';" id="update"> Update a Post </button>   <!-- Redirects to 'Update a post' page -->
+        <button class="btn btn-danger croissant-one-regular" onclick="window.location.href='/delete';" id="delete"> Delete a Post </button>    <!-- Rredirects to 'Delete a post' page -->
+    </div>
+
+</body>
+
+<%- include("./partials/footer.ejs") %>

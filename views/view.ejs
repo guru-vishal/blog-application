@@ -1,0 +1,29 @@
+<%- include("./partials/header.ejs") %>
+
+<body>
+
+    <% if(locals.posts && locals.posts.length!=0) { %>          <!-- Ensure 'posts' is declared and it is not empty -->
+        <% locals.posts.forEach(post => { %>                    <!-- Iterate through the 'posts' -->
+            <div class="card card-body post">
+
+                <h1 class="card-title croissant-one-regular" style="text-align: center;"> <%= post.title %> </h1><br>  <!-- Tilte of the post-->
+                <p class="card-text croissant-one-regular" style="font-size: 20px;"> <%= post.content %> </p><br>      <!-- Content of the post --> 
+
+                <p class="card-text mb-2 text-body-secondary date croissant-one-regular"> Posted: <%= post.datePosted %> </p>       <!-- Date and time of the post posted -->
+                <p class="card-text mb-2 text-body-secondary date croissant-one-regular"> Updated: <%= post.dateUpdated %> </p>     <!-- Date and time of the post last updated-->
+                
+            </div>
+        <% }); %>
+    <% } else { %>      <!-- If 'posts' is empty, 'No posts yet' is shown -->
+        <div class="card container card-container">
+            <p class="card-text croissant-one-regular"> No posts yet. </p>
+        </div>
+    <% } %>
+
+    <script>
+        $("#home").removeClass("active");
+    </script>
+
+</body>
+
+<%- include("partials/footer.ejs") %>

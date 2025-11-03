@@ -1,0 +1,30 @@
+<%- include("./partials/header.ejs") %>
+
+<body>
+
+    <div class="card container card-container">
+        <div class="card-body">
+          <h5 class="card-title croissant-one-regular"> Create a post </h5><br>
+
+          <form action="/create" method="post">
+            
+            <label for="title" class="croissant-one-regular"> Title </label><br><br>      <!-- Label for Title -->
+            <input type="text" class="form-control croissant-one-regular" placeholder="Title" id="title" name="title" required><br>     <!-- Input for Title -->
+
+            <label for="content" class="croissant-one-regular"> Content </label><br>      <!-- Label for Content -->
+            <textarea class="form-control new-post croissant-one-regular" id="textarea" aria-label="textarea" placeholder="Write Something..." id="content" name="content"></textarea>      <!-- Input for Content-->
+
+            <button type="submit" class="btn btn-success croissant-one-regular"> Post </button>     <!-- Button for posting -->
+            
+          </form>
+
+        </div>
+    </div>
+
+    <script>
+      $("#home").removeClass("active");
+    </script>
+
+</body>
+
+<%- include("./partials/footer.ejs") %>
